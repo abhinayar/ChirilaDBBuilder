@@ -1,0 +1,25 @@
+{
+  "name": "chirila_db_creator",
+  "version": "1.0.0",
+  "description": "DB creator in the style of Chirila DB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinayar/ChirilaDBBuilder.git"
+  },
+  "keywords": [
+    "chirila",
+    "db",
+    "builder",
+    "abhinayar"
+  ],
+  "author": "Abhi Nayar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinayar/ChirilaDBBuilder/issues"
+  },
+  "homepage": "https://github.com/abhinayar/ChirilaDBBuilder#readme"
+}
