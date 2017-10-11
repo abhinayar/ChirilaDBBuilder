@@ -31,27 +31,19 @@ If it IS NOT, then we will GET the data, then populate
 function getCheckConfigData() {
   //console.log(globalConfigData);
   if (typeof globalConfigData == 'undefined' || globalConfigData == 'undefined') {
-    var configData = getDataFromLocalStorage('siteConfigData');
-    //console.log(configData);
-    if (configData) {
-      populateConfigData(configData);
-      return configData; // the config data was IN localStorage already, return it
-    }
-    else {
-      // No config data in LS, let's get it via an AJAX call
-      // SET it back to the globalConfigData variable
-      getConfigDataFromFile();
-      // AJAX helper
-      function getConfigDataFromFile() {
-        $.getJSON(_PATH_TO_JSON, function(AJAXdata) {
-          //console.log(data);
-          // We just SET the global variable here so we don't have to worry about concurrency, etc.
-          console.log(AJAXdata);
-          saveDataToLocalStorage('siteConfigData', AJAXdata);
-          globalConfigData = AJAXdata;
-          populateConfigData(AJAXdata);
-        });
-      }
+    // No config data in LS, let's get it via an AJAX call
+    // SET it back to the globalConfigData variable
+    getConfigDataFromFile();
+    // AJAX helper
+    function getConfigDataFromFile() {
+      $.getJSON(_PATH_TO_JSON, function(AJAXdata) {
+        //console.log(data);
+        // We just SET the global variable here so we don't have to worry about concurrency, etc.
+        console.log(AJAXdata);
+        saveDataToLocalStorage('siteConfigData', AJAXdata);
+        globalConfigData = AJAXdata;
+        populateConfigData(AJAXdata);
+      });
     }
   } else {
     populateConfigData(globalConfigData);
