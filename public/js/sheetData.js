@@ -89,7 +89,7 @@ function populateLanguagesSheetData(sheetData) {
     var loc = window.location.href;
     loc = loc.substring(0, loc.indexOf('?'));
     var target = $(this).data('target');
-    target = 'languages.html?langID' + target.substring(target.indexOf('='), target.length);
+    target = './languages.html?langID' + target.substring(target.indexOf('='), target.length);
     window.location.href = loc + target;
   })
 }
