@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home - </title>
+    <title>Download - </title>
     <!-- Bootstrap Styling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <!-- Local Styling -->
     <link rel="stylesheet" href="../public/css/base.css" />
   </head>
-  <body id="home">
+  <body id="download">
     <div id="bodyContent" class="body-container">
       <div class="sidebar">
         <div class="logo one-line">
@@ -19,7 +19,7 @@
         <div class="nav-list">
           <ul id="navigation">
             <li class="nav-item">
-              <a href="" class="nav-link active" data-target="home">
+              <a href="/" class="nav-link" data-target="home">
                 Home
               </a>
             </li>
@@ -29,17 +29,17 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link" data-target="words">
+              <a href="/words.html" class="nav-link" data-target="words">
                 Words
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link" data-target="reconstructions">
+              <a href="/reconstructions.html" class="nav-link" data-target="reconstructions">
                 Reconstructions
               </a>
             </li>
             <li class="nav-item">
-              <a href="/download.html" class="nav-link" data-target="download">
+              <a href="" class="nav-link active" data-target="download">
                 Download
               </a>
             </li>
@@ -56,19 +56,33 @@
             </div>
           </div>
         </div>
-        <div id="home" class="page-section active">
+        <div id="download" class="page-section active">
           <div class="banner">
             <div class="text-wrapper heading">
-              <h1 class="hide-text">Example heading goes here.</h1>
+              <h1 class="hide-text">Download</h1>
             </div>
             <div class="text-wrapper subheading">
-              <h4 class="hide-text">Example subtitle goes here till it is replaced.</h4>
+              <h4 class="hide-text">Download the complete Chirila Dataset</h4>
             </div>
           </div>
           <div class="content container">
-            <div class="faq">
-              <ul class="faq-list">
-              </ul>
+            <div class="padded">
+              <h6 class="hide-text critical">Critical information regarding download.</h6>
+              <p class="hide-text non-critical">NON critical information regarding download.</p>
+              <div class="download-form">
+                <p class="form-title">
+                  Please submit this form to download the dataset
+                </p>
+                <form action="" method="POST">
+                  <input type="text" name="name" placeholder="Full Name">
+                  <input type="text" name="_replyto" placeholder="E-Mail Address">
+                  <input type="text" name="institution" placeholder="Institution/Business">
+                  <textarea type="text" name="usecase" placeholder="What will you use this data for?"></textarea>
+                  <input type="hidden" name="_next" value="/downloadSuccess">
+                  <input type="hidden" name="_subject" value="ChirilaDB Download Access Requested">
+                  <input type="submit" value="Download" id="submit">
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -86,8 +100,5 @@
     <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <!-- Local JS -->
     <script type='text/javascript' src='../public/js/main2.js'></script>
-    <script>
-      //populateHomeConfig(JSONdata.HOME);
-    </script>
   </body>
 </html>
