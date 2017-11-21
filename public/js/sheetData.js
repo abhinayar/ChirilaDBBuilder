@@ -134,6 +134,7 @@ function populateLanguageSubpage(sheetData, subpage) {
       $('#language_subpage').addClass('shown');
     }
     
+    /*
     // Subpage Chart
     google.charts.load('current', {
      'packages': ['geochart'],
@@ -141,6 +142,7 @@ function populateLanguageSubpage(sheetData, subpage) {
     });
     // run the callback function
     google.charts.setOnLoadCallback(drawSubpageMap);
+    */
     function drawSubpageMap() {
       var data = new google.visualization.DataTable();
       // add the columns to the data (what we want to appear on hover)
