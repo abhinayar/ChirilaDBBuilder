@@ -148,7 +148,7 @@ function populateLanguageSubpage(sheetData, subpage) {
       data.addColumn('number', 'LONGITUDE');
       data.addColumn('string', 'LANGUAGENAME');
       var dataRow = [curData.Latitude, curData.Longitude, curData.Language_name];
-      data.addRows(dataRow);
+      data.addRow(dataRow);
 
       var countryCode = globalConfigData.LANGUAGES.mapCountryCode;
         var options = {
