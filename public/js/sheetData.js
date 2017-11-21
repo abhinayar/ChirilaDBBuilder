@@ -279,7 +279,6 @@ function populateGoogleChart(sheetData) {
     data.addColumn('string', 'LANGUAGENAME');
     data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}})
     var dataRows = [];
-    sheetData = JSON.stringify(sheetData);
     sheetData = JSON.parse(sheetData);
     // loop through the sheet data object and do this for each language
     for (var i = 0; i < sheetData.length; i++) {
