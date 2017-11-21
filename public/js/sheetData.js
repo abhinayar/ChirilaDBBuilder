@@ -279,7 +279,12 @@ function populateGoogleChart(sheetData) {
     data.addColumn('string', 'LANGUAGENAME');
     data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}})
     var dataRows = [];
-    sheetData = JSON.parse(sheetData);
+    var sheetData = null;
+    if (!globalSheetData) {
+      sheetData = getSheetDataFromLocalStorage();
+    } else {
+      sheetData = globalSheetData;
+    }
     // loop through the sheet data object and do this for each language
     for (var i = 0; i < sheetData.length; i++) {
       var language = sheetData[i];
