@@ -12,7 +12,7 @@ If it IS, then we will proceed to data population functions
 If it IS NOT, then we will GET the data, then populate
 */
 function getCheckSheetData() {
-  if (typeof globalSheetData == 'undefined' || globalSheetData == 'undefined') {
+  if (typeof globalSheetData == 'undefined' || globalSheetData == 'undefined' || !globalSheetData) {
     var sheetData = getDataFromLocalStorage('siteSheetData');
     //console.log(configData);
     if (sheetData) {
@@ -33,7 +33,7 @@ function getCheckSheetData() {
         }
       }
       function resumeSheetDataPopulation() {
-        console.log('hereee');
+        console.log('here 2');
         // let's get sheet data via AJAX
         // get the gsheet url from config.json
         // get the sheet key from the url
@@ -167,7 +167,7 @@ function getSheetDataFromLocalStorage() {
     alert("Your browser does not support local storage and thus will reload the full data set per page refresh. Please update your browser.");
     return null;
   } else {
-    return JSON.parse(localStorage.getItem("sheetData"));
+    return JSON.parse(localStorage.getItem("siteSheetData"));
   }
 }
 // structureData(data)
