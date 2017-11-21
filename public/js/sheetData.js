@@ -176,7 +176,7 @@ function getSheetDataFromLocalStorage() {
 // and builds it into an object that we can use (of the form specified in the dev. docs.)
 // NOTE::: THIS FUNCTION USES WEB WORKERS
 function structureData(data) {
-  var dataWorker = new Worker('./data-worker.js');
+  var dataWorker = new Worker('/data-worker.js');
   dataWorker.addEventListener('message', function(e) {
     //console.log('Worker said: ', e.data);
     var data = e.data;
@@ -222,7 +222,7 @@ function populateTables(sheetData, tableToPopulate) {
     return true;
   } else {
     // if we DONT have the info in local storage then we call our worker into action
-    var uiWorker = new Worker('./ui-worker.js');
+    var uiWorker = new Worker('/ui-worker.js');
     // send the data and parse it on return
     uiWorker.addEventListener('message', function(e) {
       // Data returned is [langData, wordData, reconstructionData]
