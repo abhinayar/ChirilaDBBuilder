@@ -74,7 +74,6 @@ function saveDataToLocalStorage(name, data) {
 }
 function getDataFromLocalStorage(name) {
   var data = localStorage.getItem(name);
-  data = JSON.stringify(data);
   if (data) return JSON.parse(data);
   else return false;
 }
