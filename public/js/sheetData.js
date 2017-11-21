@@ -133,6 +133,34 @@ function populateLanguageSubpage(sheetData, subpage) {
       $('#language_subpage tbody').append(subpageWordTable);
       $('#language_subpage').addClass('shown');
     }
+    
+    // Subpage Chart
+    var data = new google.visualization.DataTable();
+    // add the columns to the data (what we want to appear on hover)
+    data.addColumn('number', 'LATITUDE');
+    data.addColumn('number', 'LONGITUDE');
+    data.addColumn('string', 'LANGUAGENAME');
+    var dataRow = [curData.Latitude, curData.Longitude, curData.Language_name];
+    data.addRows(dataRows);
+    
+    var countryCode = globalConfigData.LANGUAGES.mapCountryCode;
+      var options = {
+        region: countryCode,
+        displayMode: 'markers',
+        enableRegionInteractivity: 'false',
+        resolution: 'provinces',
+        colorAxis: {colors: ['red']},
+        sizeAxis : {
+          minSize: 2,
+          maxSize: 2
+        },
+        tooltip: { isHtml: true },
+        keepAspectRatio: true
+      };
+      // define the chart from the JS lib
+      var chart = new google.visualization.GeoChart(document.getElementById('subpage_chart_div'));
+      // draw the data onto the chart
+      chart.draw(data, options);
   }
 }
 function populateWordsSheetData(sheetData) {
