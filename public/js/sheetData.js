@@ -285,6 +285,7 @@ function populateGoogleChart(sheetData) {
     } else {
       sheetData = globalSheetData;
     }
+    sheetData = JSON.parse(shetData);
     // loop through the sheet data object and do this for each language
     for (var i = 0; i < sheetData.length; i++) {
       var language = sheetData[i];
